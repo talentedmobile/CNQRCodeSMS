@@ -1,0 +1,48 @@
+//
+//  SWSImageView.h
+//  ImageDownloadManager
+//
+//  Created by Manish Rathi on 19/11/13.
+//  Copyright (c) 2013 Manish Rathi. All rights reserved.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+
+#import <UIKit/UIKit.h>
+
+typedef enum {
+    PROGRESS_NONE,
+    PROGRESS_CIRCLE,
+    PROGRESS_GRAY_ACTIVITY,
+    PROGRESS_WHITE_ACTIVITY,
+    PROGRESS_WHITE_LARGE_ACTIVITY,
+    PROGRESS_BAR,
+    PROGRESS_CUSTOM
+}ProgressViewStyle;
+
+@interface SWSImageView : UIImageView
+
+//Load-Image (with No Progress-Indicator)
+-(void)loadImageWithUrl:(NSURL *)url;
+-(void)loadImageWithUrl:(NSURL *)url withDefaultImage:(UIImage *)defaultImg;
+
+//Load-Image (with Progress-Indicator)
+-(void)loadImageWithUrl:(NSURL *)url ProgressViewStyle:(ProgressViewStyle)progressStyle;
+-(void)loadImageWithUrl:(NSURL *)url withDefaultImage:(UIImage *)defaultImg ProgressViewStyle:(ProgressViewStyle)progressStyle;
+@end
